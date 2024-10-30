@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Reserva</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <label for="email">Número:</label>
+                    <input type="email" class="form-control" id="number" placeholder="Número de contacto">
+                </div>
+                <div class="form-group">
+                    <label for="email">Servicio:</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Servicio:</option>
+                        <div *ngFor="let item of servicelist">
+                            <option>{{item.name}}</option>
+                        </div>
+                      </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Fecha:</label>
+                    <input type="date" class="form-control" id="date">
+                </div>
+                <div class="form-group">
+                    <label for="time">Hora:</label>
+                    <input type="time" class="form-control" id="time">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea class="form-control" id="message" rows="3" placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

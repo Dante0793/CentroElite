@@ -1,0 +1,23 @@
+<form [formGroup]="addServiceForm" (ngSubmit)="createUser()" class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal">Crear servicio</h1>
+    
+    <label for="inputName" class="sr-only">Nombre del servicio</label>
+    <input type="text" id="inputName" class="form-control" placeholder="Servicio..." formControlName="name">
+    <div *ngIf="addServiceForm.get('name')?.invalid && addServiceForm.get('name')?.touched">
+      <small *ngIf="addServiceForm.get('name')?.errors?.['name']">El Nombre es requerido</small>
+    </div>
+
+    <label for="inputDescription" class="sr-only">Detalles</label>
+    <input type="text" id="inputDescription" class="form-control" placeholder="Descripción del servicio..." formControlName="description">
+    <div *ngIf="addServiceForm.get('description')?.invalid && addServiceForm.get('description')?.touched">
+      <small *ngIf="addServiceForm.get('description')?.errors?.['description']">El Nombre es requerido</small>
+    </div>
+
+    <label for="inputPrice" class="sr-only">Precio</label>
+    <input type="number" id="inputPrice" class="form-control" placeholder="Servicio..." formControlName="price">
+    <div *ngIf="addServiceForm.get('price')?.invalid && addServiceForm.get('price')?.touched">
+      <small *ngIf="addServiceForm.get('price')?.errors?.['price']">El Nombre es requerido</small>
+    </div>
+
+    <button [disabled]="!addServiceForm.valid" class="btn btn-lg btn-primary btn-block" type="submit">Crear</button>
+  </form>
